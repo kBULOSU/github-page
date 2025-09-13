@@ -35,7 +35,7 @@ const Header = () => {
       <div className="container">
         <div className="nav-brand">
           <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}>
-            Portfolio
+            <span className="brand-icon">></span> Diogo
           </a>
         </div>
         
