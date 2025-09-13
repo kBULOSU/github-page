@@ -1,13 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Code, Server, Database } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const handleDownloadCV = () => {
-    // You can replace this with your actual CV download link
     const link = document.createElement('a');
-    link.href = '/path-to-your-cv.pdf'; // Update this path
-    link.download = 'Diogo-Bertoncini-CV.pdf';
+    link.href = '/cv-diogo-bertoncini.pdf';
+    link.download = 'CV-Diogo-Bertoncini.pdf';
     link.click();
   };
 
@@ -29,48 +28,45 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="hero-title"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="greeting">>_</span> Hi, I'm <span className="highlight">Diogo</span>
+              Olá, eu sou <span className="text-gradient">Diogo</span>
             </motion.h1>
             
             <motion.div 
-              className="hero-subtitle"
+              className="subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <Code size={24} />
-              <span>Java Backend Developer</span>
-              <Server size={24} />
+              Desenvolvedor Java Backend
             </motion.div>
             
             <motion.p 
-              className="hero-description"
+              className="description"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Crafting robust server-side applications and Minecraft plugins. 
-              Passionate about creating seamless gaming experiences through 
-              clean code and innovative solutions.
+              Especialista em desenvolvimento de aplicações backend robustas e plugins para Minecraft. 
+              Apaixonado por criar experiências de jogo perfeitas através de código limpo e soluções inovadoras.
             </motion.p>
             
             <motion.div 
-              className="hero-buttons"
+              className="hero-actions"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <button className="btn btn-primary" onClick={handleDownloadCV}>
-                <Database size={20} />
-                Download CV
+                <Download size={20} />
+                Baixar CV
               </button>
               <button className="btn btn-secondary" onClick={scrollToContact}>
-                Connect
+                Vamos Conversar
+                <ArrowRight size={20} />
               </button>
             </motion.div>
 
@@ -93,16 +89,15 @@ const Hero = () => {
           </motion.div>
           
           <motion.div 
-            className="hero-image"
+            className="hero-visual"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="hero-avatar">
-              <div className="avatar-placeholder">
-                <span>DB</span>
+              <div className="avatar-content">
+                DB
               </div>
-              <div className="avatar-glow"></div>
             </div>
           </motion.div>
         </div>

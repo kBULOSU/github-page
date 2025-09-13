@@ -6,68 +6,59 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'EcoCraft - Economy System',
-      description: 'Advanced economy plugin with banking, shops, auctions, and player trading. Features MySQL integration, web dashboard, and REST API for server management.',
+      title: 'EcoCraft - Sistema de Economia',
+      description: 'Plugin avançado de economia com sistema bancário, lojas, leilões e comércio entre jogadores. Inclui integração MySQL, dashboard web e API REST.',
       icon: <Gamepad2 size={32} />,
       technologies: ['Java', 'Bukkit/Spigot', 'MySQL', 'Spring Boot', 'REST API'],
       githubUrl: 'https://github.com/kBULOSU/EcoCraft',
-      featured: true,
-      color: '#00ff41'
+      featured: true
     },
     {
       id: 2,
-      title: 'ServerGuard - Management API',
-      description: 'Comprehensive backend API for managing Minecraft servers, player data, and server statistics. Built with Spring Boot and PostgreSQL for high performance.',
+      title: 'ServerGuard - API de Gerenciamento',
+      description: 'API backend abrangente para gerenciar servidores Minecraft, dados de jogadores e estatísticas. Construída com Spring Boot e PostgreSQL.',
       icon: <Server size={32} />,
       technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Redis'],
       githubUrl: 'https://github.com/kBULOSU/ServerGuard',
-      featured: true,
-      color: '#00d4ff'
+      featured: true
     },
     {
       id: 3,
-      title: 'DataSync - Migration Tool',
-      description: 'Java application for migrating and synchronizing data between different database systems. Supports MySQL, PostgreSQL, and SQLite with zero downtime.',
+      title: 'DataSync - Ferramenta de Migração',
+      description: 'Aplicação Java para migrar e sincronizar dados entre diferentes sistemas de banco de dados. Suporta MySQL, PostgreSQL e SQLite.',
       icon: <Database size={32} />,
       technologies: ['Java', 'MySQL', 'PostgreSQL', 'SQLite', 'JDBC'],
       githubUrl: 'https://github.com/kBULOSU/DataSync',
-      featured: false,
-      color: '#ff6b35'
+      featured: false
     },
     {
       id: 4,
       title: 'AntiCheat Pro',
-      description: 'Advanced anti-cheat plugin with machine learning detection, player behavior analysis, and real-time monitoring capabilities for fair gameplay.',
+      description: 'Plugin anti-cheat avançado com detecção por machine learning, análise de comportamento de jogadores e monitoramento em tempo real.',
       icon: <Shield size={32} />,
       technologies: ['Java', 'Bukkit/Spigot', 'Machine Learning', 'MySQL', 'NMS'],
       githubUrl: 'https://github.com/kBULOSU/AntiCheatPro',
-      featured: false,
-      color: '#ff6b35'
+      featured: false
     },
     {
       id: 5,
-      title: 'Analytics Dashboard',
-      description: 'Web-based analytics dashboard for Minecraft server administrators. Track player behavior, server performance, and game statistics in real-time.',
+      title: 'Dashboard de Analytics',
+      description: 'Dashboard web para administradores de servidores Minecraft. Acompanhe comportamento de jogadores, performance do servidor e estatísticas.',
       icon: <BarChart3 size={32} />,
       technologies: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Chart.js'],
       githubUrl: 'https://github.com/kBULOSU/AnalyticsDashboard',
-      featured: false,
-      color: '#00d4ff'
+      featured: false
     },
     {
       id: 6,
       title: 'MineLauncher',
-      description: 'Java-based Minecraft launcher with mod management, server integration, and automatic updates. Features custom UI and plugin support.',
+      description: 'Launcher Minecraft baseado em Java com gerenciamento de mods, integração de servidor e atualizações automáticas. Interface customizada.',
       icon: <Download size={32} />,
       technologies: ['Java', 'JavaFX', 'HTTP Client', 'JSON', 'File Management'],
       githubUrl: 'https://github.com/kBULOSU/MineLauncher',
-      featured: false,
-      color: '#00ff41'
+      featured: false
     }
   ];
-
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
 
   return (
     <section id="projects" className="projects">
@@ -79,113 +70,48 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">My Projects</h2>
-          <p className="section-subtitle">Minecraft plugins and backend systems I've built</p>
+          <h2>Meus Projetos</h2>
+          <p>Plugins Minecraft e sistemas backend que desenvolvi</p>
         </motion.div>
 
-        <div className="projects-content">
-          {/* Featured Projects */}
-          <motion.div 
-            className="featured-projects"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="projects-subtitle">Featured Projects</h3>
-            <div className="projects-grid featured-grid">
-              {featuredProjects.map((project, index) => (
-                <motion.div 
-                  key={project.id} 
-                  className="project-card featured-card minecraft-block pixel-border"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  style={{ borderColor: project.color }}
-                >
-                  <div className="project-header">
-                    <div className="project-icon" style={{ color: project.color }}>
-                      {project.icon}
-                    </div>
-                    <div className="project-links">
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link"
-                        style={{ color: project.color }}
-                      >
-                        <Github size={20} />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="project-content">
-                    <h4 className="project-title">{project.title}</h4>
-                    <p className="project-description">{project.description}</p>
-                    <div className="project-technologies">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="tech-tag" style={{ borderColor: project.color }}>
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Other Projects */}
-          <motion.div 
-            className="other-projects"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="projects-subtitle">Other Projects</h3>
-            <div className="projects-grid">
-              {otherProjects.map((project, index) => (
-                <motion.div 
-                  key={project.id} 
-                  className="project-card minecraft-block"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="project-header">
-                    <div className="project-icon" style={{ color: project.color }}>
-                      {project.icon}
-                    </div>
-                    <div className="project-links">
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link"
-                        style={{ color: project.color }}
-                      >
-                        <Github size={18} />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="project-content">
-                    <h4 className="project-title">{project.title}</h4>
-                    <p className="project-description">{project.description}</p>
-                    <div className="project-technologies">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="tech-tag" style={{ borderColor: project.color }}>
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <motion.div 
+              key={project.id} 
+              className="project-card card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="project-header">
+                <div className="project-icon">
+                  {project.icon}
+                </div>
+                <div className="project-links">
+                  <a 
+                    href={project.githubUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <Github size={20} />
+                  </a>
+                </div>
+              </div>
+              <div className="project-content">
+                <h4 className="project-title">{project.title}</h4>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tech">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

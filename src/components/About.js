@@ -4,26 +4,15 @@ import { Code, Server, Database, Zap } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { number: '30+', label: 'Minecraft Plugins', icon: <Code size={20} /> },
-    { number: '4+', label: 'Years Experience', icon: <Server size={20} /> },
-    { number: '15+', label: 'Database Projects', icon: <Database size={20} /> },
-    { number: '100%', label: 'Passion', icon: <Zap size={20} /> }
+    { number: '30+', label: 'Plugins Minecraft', icon: <Code size={20} /> },
+    { number: '4+', label: 'Anos de Experiência', icon: <Server size={20} /> },
+    { number: '15+', label: 'Projetos de Banco', icon: <Database size={20} /> },
+    { number: '100%', label: 'Paixão', icon: <Zap size={20} /> }
   ];
 
   return (
     <section id="about" className="about">
       <div className="container">
-        <motion.div 
-          className="section-header"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">Backend developer crafting digital experiences</p>
-        </motion.div>
-
         <div className="about-content">
           <motion.div 
             className="about-text"
@@ -32,15 +21,16 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3>Building the future, one line of code at a time</h3>
+            <h2>Sobre Mim</h2>
             <p>
-              I'm a 24-year-old Java backend developer passionate about creating robust server-side 
-              applications and innovative Minecraft plugins. My expertise spans from database optimization 
-              to server architecture, always focused on performance and scalability.
+              Sou um desenvolvedor Java backend de 24 anos, apaixonado por criar aplicações server-side 
+              robustas e plugins inovadores para Minecraft. Minha expertise abrange desde otimização de 
+              bancos de dados até arquitetura de servidores, sempre focado em performance e escalabilidade.
             </p>
             <p>
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
-              projects, or optimizing database queries for that perfect millisecond improvement.
+              Quando não estou programando, você me encontrará explorando novas tecnologias, contribuindo 
+              para projetos open-source, ou otimizando consultas de banco de dados para aquela melhoria 
+              perfeita de milissegundos.
             </p>
           </motion.div>
 
@@ -54,7 +44,7 @@ const About = () => {
             {stats.map((stat, index) => (
               <motion.div 
                 key={index} 
-                className="stat-item"
+                className="stat-card"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}

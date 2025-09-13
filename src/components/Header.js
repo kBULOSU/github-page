@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,11 +13,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Início', href: '#home' },
+    { name: 'Sobre', href: '#about' },
+    { name: 'Habilidades', href: '#skills' },
+    { name: 'Projetos', href: '#projects' },
+    { name: 'Contato', href: '#contact' },
   ];
 
   const scrollToSection = (href) => {
@@ -27,22 +25,19 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false);
   };
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="nav-brand">
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}>
-            <span className="brand-icon">></span> Diogo
-          </a>
-        </div>
+        <a href="#home" className="nav-brand" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}>
+          Diogo
+        </a>
         
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          <ul className="nav-list">
+        <nav className="nav">
+          <ul className="nav-menu">
             {navItems.map((item) => (
-              <li key={item.name} className="nav-item">
+              <li key={item.name}>
                 <a
                   href={item.href}
                   onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
@@ -54,14 +49,6 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-
-        <button
-          className="nav-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle navigation"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
     </header>
   );
