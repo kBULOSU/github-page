@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, ArrowRight } from 'lucide-react';
+import { Github, Download, ArrowRight, Diamond, Pickaxe } from 'lucide-react';
 
 const Hero = () => {
   const handleDownloadCV = () => {
@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero minecraft-hero">
       <div className="container">
         <div className="hero-content">
           <motion.div 
@@ -27,44 +27,58 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
+            <motion.div 
+              className="minecraft-greeting"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Olá, eu sou <span className="text-gradient">Diogo</span>
-            </motion.h1>
+              <span className="minecraft-prompt">&gt;</span> Olá, eu sou
+            </motion.div>
             
-            <motion.div 
-              className="subtitle"
+            <motion.h1 
+              className="minecraft-title"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Desenvolvedor Java Backend
-            </motion.div>
+              <span className="minecraft-name">Diogo</span>
+              <Diamond size={32} className="diamond-icon" />
+            </motion.h1>
             
-            <motion.p 
-              className="description"
+            <motion.div 
+              className="minecraft-subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Especialista em desenvolvimento de aplicações backend robustas e plugins para Minecraft. 
-              Apaixonado por criar experiências de jogo perfeitas através de código limpo e soluções inovadoras.
+              <Pickaxe size={24} className="pickaxe-icon" />
+              <span>Desenvolvedor Java Backend & Plugin Creator</span>
+              <Pickaxe size={24} className="pickaxe-icon" />
+            </motion.div>
+            
+            <motion.p 
+              className="minecraft-description"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              Crafting robust server-side applications and innovative Minecraft plugins. 
+              Passionate about creating seamless gaming experiences through clean code and 
+              pixel-perfect solutions. Ready to build the next generation of server experiences!
             </motion.p>
             
             <motion.div 
               className="hero-actions"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <button className="btn btn-primary" onClick={handleDownloadCV}>
+              <button className="btn btn-primary minecraft-btn" onClick={handleDownloadCV}>
                 <Download size={20} />
                 Baixar CV
               </button>
-              <button className="btn btn-secondary" onClick={scrollToContact}>
+              <button className="btn btn-secondary minecraft-btn" onClick={scrollToContact}>
                 Vamos Conversar
                 <ArrowRight size={20} />
               </button>
@@ -74,16 +88,10 @@ const Hero = () => {
               className="hero-social"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
             >
-              <a href="https://github.com/kBULOSU" target="_blank" rel="noopener noreferrer" className="social-link">
+              <a href="https://github.com/kBULOSU" target="_blank" rel="noopener noreferrer" className="social-link minecraft-social">
                 <Github size={24} />
-              </a>
-              <a href="https://linkedin.com/in/diogo-bertoncini" target="_blank" rel="noopener noreferrer" className="social-link">
-                <Linkedin size={24} />
-              </a>
-              <a href="mailto:diogo.bertoncini@example.com" className="social-link">
-                <Mail size={24} />
               </a>
             </motion.div>
           </motion.div>
@@ -94,10 +102,15 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="hero-avatar">
-              <div className="avatar-content">
-                DB
+            <div className="minecraft-avatar">
+              <div className="minecraft-skin">
+                <img 
+                  src="https://mc-heads.net/avatar/DiogoBertoncini/200" 
+                  alt="Minecraft Skin - Diogo"
+                  className="skin-image"
+                />
               </div>
+              <div className="minecraft-glow"></div>
             </div>
           </motion.div>
         </div>
