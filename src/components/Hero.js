@@ -105,8 +105,8 @@ const Hero = () => {
             <div className="minecraft-avatar">
               <div className="minecraft-skin">
                 <img 
-                  src="https://mc-heads.net/avatar/DiogoBertoncini/200" 
-                  alt="Minecraft Skin - Diogo"
+                  src="https://mc-heads.net/avatar/toncini/200" 
+                  alt="Minecraft Skin"
                   className="skin-image"
                 />
               </div>
