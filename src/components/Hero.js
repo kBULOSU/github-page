@@ -53,7 +53,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Pickaxe size={24} className="pickaxe-icon" />
-              <span>Desenvolvedor Java Backend & Plugin Creator</span>
+              <span>Desenvolvedor Java Backend</span>
               <Pickaxe size={24} className="pickaxe-icon" />
             </motion.div>
             
@@ -63,9 +63,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Crafting robust server-side applications and innovative Minecraft plugins. 
-              Passionate about creating seamless gaming experiences through clean code and 
-              pixel-perfect solutions. Ready to build the next generation of server experiences!
+              Desenvolvendo aplicações robustas no lado do servidor e plugins inovadores para Minecraft.  
+              Apaixonado por criar experiências de jogo fluidas através de código limpo e soluções precisas.  
+              Pronto para construir a próxima geração de experiências em servidores!
             </motion.p>
             
             <motion.div 
@@ -79,7 +79,7 @@ const Hero = () => {
                 Baixar CV
               </button>
               <button className="btn btn-secondary minecraft-btn" onClick={scrollToContact}>
-                Vamos Conversar
+                Vamos Programar
                 <ArrowRight size={20} />
               </button>
             </motion.div>
@@ -105,7 +105,7 @@ const Hero = () => {
             <div className="minecraft-avatar">
               <div className="minecraft-skin">
                 <img 
-                  src="https://mc-heads.net/avatar/toncini/200" 
+                  src="https://mc-heads.net/avatar/naosei/200" 
                   alt="Minecraft Skin"
                   className="skin-image"
                 />
