@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -21,17 +21,9 @@ const Contact = () => {
           </p>
           
           <div className="contact-actions">
-            <a href="mailto:diogo.bertoncini@example.com" className="btn btn-primary">
-              <Mail size={20} />
-              Enviar Email
-            </a>
-            <a href="https://github.com/kBULOSU" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            <a href="https://github.com/kBULOSU" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <Github size={20} />
               Ver GitHub
-            </a>
-            <a href="https://linkedin.com/in/diogo-bertoncini" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              <Linkedin size={20} />
-              LinkedIn
             </a>
           </div>
         </motion.div>
