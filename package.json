@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://diogobertoncini.github.io/github-page",
+  "homepage": "https://kBULOSU.github.io/github-page",
   "eslintConfig": {
     "extends": [
       "react-app",
