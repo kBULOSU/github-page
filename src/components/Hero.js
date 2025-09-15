@@ -33,7 +33,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="minecraft-prompt">&gt;</span> Olá, eu sou
+              <span className="minecraft-prompt">&gt;</span>
             </motion.div>
             
             <motion.h1 
@@ -53,7 +53,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Pickaxe size={24} className="pickaxe-icon" />
-              <span>Desenvolvedor Java Backend</span>
+              <span>Desenvolvedor Backend</span>
               <Pickaxe size={24} className="pickaxe-icon" />
             </motion.div>
             
